@@ -3,10 +3,10 @@ import "./ImageList.scss";
 
 export default class ImageList extends Component {
   render() {
-    const images = this.props.images.map((image) => {
+    const images = this.props.images.map((image, index) => {
       return (
-        <a href={image.urls.regular} title={image.description}>
-          <img src={image.urls.regular} alt={image.description} />
+        <a key={index} href={image.urls.regular} title={image.description}>
+          <img key={index} src={image.urls.regular} alt={image.description} />
         </a>
       );
     });
